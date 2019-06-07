@@ -8,6 +8,66 @@ In neural dialogue modeling, a neural network is trained to predict the next utt
 
 ![table_image](mtbeam_table.png)
 
+## Running the code with pre-trained models
+
+Supplementary code for submission "Multi-Turn Beam Search for Neural Dialogue Modeling"
+
+We provide code and pretrained models for better analysis and discussion of our work.
+This can be executed without GPU/CUDA with CPU-only mode. To use GPU, remove `--no-cuda` options from the scripts.  
+
+### Install requirements
+
+create new conda env using specification file
+
+`conda env create -f environment.yml`
+
+Note that each host could have some dependencies clash / mismatch. One can use this file to see what packages are required and install them individually.
+
+Now you need to install ParlAI paths into your python env:
+
+`cd ParlAI; python setup.py develop`
+
+### Download pre-trained models:
+
+`https://dl.dropboxusercontent.com/s/rh5d0xmjgjyyw22/models.zip`
+
+Unzip models.zip as models folder in the main root folder here.
+After this step there should be a folder models located in the root.
+
+We provide pretrained models used in our paper.
+
+### Interactive mode:
+
+There is a script which you can use to run a real dialogue with our model.
+
+To run using egocentric partner:
+
+`./mtbeam_eval_interactive_egocentric.sh`
+
+To run with mindless partner:
+
+`./mtbeam_eval_interactive_mindless.sh`
+
+Our model assumes that all the context is given as part of the input (check paper for details), here we include one possible
+model persona which you can use (copy paste it as the first message):
+
+`your persona: i've slightly different taste in things than most people. \n your persona: i like seafood a lot. \n your persona: i'm a natural brunette. \n your persona: i love books about science. \n your persona: i've no self control when it comes to candy. \n hello ! how are you ?`
+
+### Validation data
+
+There is a script to run validation epoch using pretrained model.
+
+To run using egocentric partner:
+
+`./mtbeam_eval_egocentric.sh`
+
+To run using mindless partner:
+
+`./mtbeam_eval_mindless.sh`
+
+This code does not have transparent mode, because it was done on the MTurk side of the human evaluation. The only difference there is how human annotator persona is given to the model.
+
+
 ## Citation
 
 >@misc{kulikov2019multiturn,
