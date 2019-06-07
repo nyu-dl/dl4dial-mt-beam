@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <style>
+        a.deco-none {
+            color: inherit;
+            text-decoration:none;
+        }
+
+        hr {
+          -moz-border-bottom-colors: none;
+          -moz-border-image: none;
+          -moz-border-left-colors: none;
+          -moz-border-right-colors: none;
+          -moz-border-top-colors: none;
+          border-color: #000000 -moz-use-text-color #FFFFFF;
+          border-style: solid none;
+          border-width: 1px 0;
+          margin: 0 0;
+            }
+
+        pre {
+            display: block;
+            font-family: monospace;
+            white-space: pre;
+            margin: 1em 0;
+            }
+
+        .imgbox {
+            display: grid;
+            width: 100%;
+        }
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+
+    </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Ilya Kulikov">
+
+    <title>Multi-Turn Beam Search for Neural Dialogue Modeling</title>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 class="mt-5">Multi-Turn Beam Search for Neural Dialogue Modeling <br/> <a class="btn btn-info" href="https://arxiv.org/abs/1906.00141" role="button">Arxiv</a> <a class="btn btn-primary" href="https://github.com/nyu-dl/dl4dial-mt-beam" role="button">GitHub</a> </h1>
+
+                <br/>
+          <p class="lead text-justify">
+               In neural dialogue modeling, a neural network is trained to predict the next utterance, and at inference time, an approximate decoding algorithm is used to generate next utterances given previous ones. While this autoregressive framework allows us to model the whole conversation during training, inference is highly suboptimal, as a wrong utterance can affect future utterances. While beam search yields better results than greedy search does, we argue that it is still greedy in the context of the entire conversation, in that it does not consider future utterances. We propose a novel approach for conversation-level inference by explicitly modeling the dialogue partner and running beam search across multiple conversation turns. Given a set of candidates for next utterance, we unroll the conversation for a number of turns and identify the candidate utterance in the initial hypothesis set that gives rise to the most likely sequence of future utterances. We empirically validate our approach by conducting human evaluation using the Persona-Chat dataset, and find that our multi-turn beam search generates significantly better dialogue responses. We propose three approximations to the partner model, and observe that more informed partner models give better performance.
+          </p>
+            <br/>
+
+        <div class='imgbox'>
+        <img class='center-fit' src='mtbeam_table.png'>
+        </div>
+
+        <h1 align='left' class="mt-5" id='citation'>Citation</h1>
+        <p align='left' class='lead' >If you find our work helpful you can cite it using this bib:</p><br />
+        <pre align='left'>
+	@misc{kulikov2019multiturn,
+ 		title={Multi-Turn Beam Search for Neural Dialogue Modeling},
+    		author={Ilia Kulikov and Jason Lee and Kyunghyun Cho},
+    		year={2019},
+    		eprint={1906.00141},
+    		archivePrefix={arXiv},
+    		primaryClass={cs.CL}
+	}
+        </pre>
+
+    <br/><br/><br/><br/>
+
+  </body>
+
+</html>
