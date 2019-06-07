@@ -31,9 +31,6 @@ node_modules/
 parts/
 sdist/
 var/
-convai2_submissions/
-parlai_internal/
-parlai_external/
 *.egg-info/
 .installed.cfg
 *.egg
